@@ -1,0 +1,46 @@
+<header>
+    <h1>Contador de Uso</h1>
+</header>
+<div class="flex-container">
+
+        <div class="box-um">
+            <form action="form" method="POST">
+                <select  name= "impname" class="selecao">
+                    <option>Selecione</option>
+                    <option  name="impname" > HP8610 - Financeiro </option>
+                    <option  name="impname">  HP8710 - Comercial  </option>
+                    <option  name="impname">  Expedição  </option>
+
+                </select>
+                
+                <select  name= "setor" class="selecao" required >
+                    <option >Selecione</option>
+                    <option name="setor">Financeiro</option>
+                    <option name="setor">Comercial</option>
+                    <option name="setor">Expedição</option>
+                    <option name="setor">Seg. trabalho</option>
+                </select>
+                <br>
+                
+                
+                <div class="contador">
+                    <label for="oldcont">Contador</label><br>
+                    <input name="oldcont"  type="number" id="oldcont"> -
+                </div class="contador">
+                <div>
+                    <p> Contador Novo</p>
+                    <input  name="newcont"  type="number"  id="newcont">
+                </div>
+                <br>
+
+
+                <button type="submit>" class="botao"> Calcular </button>
+            </form>
+        </div>
+        <div class="box-dois"> 
+            <h5></h5>
+        </div>
+    <script src="/public/Js/calculo.js" type="javascript/txt"></script>
+    
+</div>
+<footer>Julio Lemos</footer>
