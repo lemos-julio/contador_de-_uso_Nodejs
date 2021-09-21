@@ -11,6 +11,7 @@ const Post = require("./models/db.js/Imp")
     /*Configuração para utilizar CSS*/ 
      app.use(express.static('./public'));
      app.use(express.static('./public/Js'));
+     app.use(express.static('/node_modules/bulma/css/'))
     //
 
     
@@ -52,6 +53,14 @@ const Post = require("./models/db.js/Imp")
 
 
         
+      })
+
+
+      //Solicitando dados ao BD
+      app.get('/form', function(req, res){
+        Post.findAll().then(function(posts){
+          res.render(__dirname + "/views/layouts/form", {posts:posts})
+        })
       })
 
 

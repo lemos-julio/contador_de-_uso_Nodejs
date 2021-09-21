@@ -3,44 +3,89 @@
 </header>
 <div class="flex-container">
 
-        <div class="box-um">
-            <form action="form" method="POST">
-                <select  name= "impname" class="selecao">
-                    <option>Selecione</option>
-                    <option  name="impname" > HP8610 - Financeiro </option>
-                    <option  name="impname">  HP8710 - Comercial  </option>
-                    <option  name="impname">  Expedição  </option>
+<div class="box-um">
+    <form action="form"     method="POST">
 
-                </select>
-                
-                <select  name= "setor" class="selecao" required >
-                    <option >Selecione</option>
-                    <option name="setor">Financeiro</option>
-                    <option name="setor">Comercial</option>
-                    <option name="setor">Expedição</option>
-                    <option name="setor">Seg. trabalho</option>
-                </select>
-                <br>
-                
-                
-                <div class="contador">
-                    <label for="oldcont">Contador</label><br>
-                    <input name="oldcont"  type="number" id="oldcont"> -
-                </div class="contador">
-                <div>
-                    <p> Contador Novo</p>
-                    <input  name="newcont"  type="number"  id="newcont">
-                </div>
-                <br>
-
-
-                <button type="submit>" class="botao"> Calcular </button>
-            </form>
+        <div class="select is-small">
+            <select name="impname" >
+                <option>Selecione</option>
+                <option  name="impname" > HP8610 - Financeiro </option>
+                <option  name="impname">  HP8710 - Comercial  </option>
+                <option  name="impname">  Expedição  </option>
+            </select>
         </div>
-        <div class="box-dois"> 
-            <h5></h5>
+
+        <div class="select is-small">
+            <select name= "setor" >
+                <option >Selecione</option>
+                <option name="setor">Financeiro</option>
+                <option name="setor">Comercial</option>
+                <option name="setor">Expedição</option>
+                <option name="setor">Seg. trabalho</option>
+            </select>
         </div>
-    <script src="/public/Js/calculo.js" type="javascript/txt"></script>
+
+        <div >
+            <p>Contaor antigo</p>
+            <input class="input is-small" type="number" name="oldcont">
+        </div class="contador">
+
+        <div >
+            <p> Contador Novo</p>
+            <input class="input is-small" type="number" name="newcont">
+        </div>
+        <br>
+
+
+        <button class="button is-info is-outlined">Calcular</button>
+    </form>
+</div>
+<div class="box-dois">
+   
+ 
+   
+   
+    <form action="form" method="GET">
+
+        <button class="button is-info -is-outlined">Buscar</button>
+
+
+
+    </form>
+
+   <table class="table is-narrow" >
+        <thead class="tabela">
+            <tr>
+                <th>Impressora</th>
+                <th>Setor</th>
+                <th>Contador Antigo</th>
+                <th>Novo Contardor</th>
+                <th>Impressão do Mês</th>
+            </tr>
+        </thead>
+        {{#each posts}}
+            <tbody >
+                <td >{{dataValues.NOME_IMP}}</td>
+                <td >{{dataValues.SETOR}}</td>
+                <td >{{dataValues.CONT_OLD}}</td>
+                <td >{{dataValues.CONT_NEW}}</td>
+                <td >{{dataValues.CONT_USO}}</td>
+            </tbody>    
+        {{/each}}
+        <tfoot class="tabela">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tfoot>   
     
+    </table>
+
+
+
+</div>
+    <script src="/public/Js/calculo.js" type="javascript/txt"></script>
+
 </div>
 <footer>Julio Lemos</footer>

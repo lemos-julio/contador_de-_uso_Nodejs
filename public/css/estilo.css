@@ -83,3 +83,13 @@ select.selecao{
     }
     
 }
+
+
+.tabela{
+    margin: 10px;
+    border: ridge;
+    padding: 2px;
+    border-radius: 10px;
+    
+    
+}
